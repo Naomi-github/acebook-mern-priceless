@@ -10,7 +10,10 @@ describe("/users", () => {
     await User.deleteMany({});
   });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1524a06 (first commit for this branch)
   describe("POST, when email, password and username are provided", () => {
     test("the response code is 201", async () => {
       let response = await request(app)
@@ -79,6 +82,7 @@ describe("/users", () => {
       expect(users.length).toEqual(0)
     });
   });
+<<<<<<< HEAD
 
   describe("GET, when id is given it returns user info", () => {
     let user;
@@ -101,4 +105,6 @@ describe("/users", () => {
       expect(response.body.user.username).toContain("shah8")
     });
   });
+=======
+>>>>>>> 1524a06 (first commit for this branch)
 })

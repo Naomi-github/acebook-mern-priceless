@@ -8,6 +8,7 @@ const JWT = require("jsonwebtoken");
 let token;
 
 describe("/posts", () => {
+<<<<<<< HEAD
   beforeAll(async () => {
     await User.deleteMany({});
     await Post.deleteMany({});
@@ -16,6 +17,10 @@ describe("/posts", () => {
       password: "12345678",
       username: "username",
     });
+=======
+  beforeAll( async () => {
+    const user = new User({email: "test@test.com", password: "12345678", username: "username"});
+>>>>>>> 1524a06 (first commit for this branch)
     await user.save();
     token = TokenGenerator.jsonwebtoken(user.id);
   });

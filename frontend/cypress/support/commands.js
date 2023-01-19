@@ -10,12 +10,16 @@
 //
 //
 // -- This is a parent command --
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1524a06 (first commit for this branch)
 Cypress.Commands.add('signup', (email, password, username) => {
   cy.visit("/signup");
   cy.get("#email").type(email);
   cy.get("#password").type(password);
   cy.get("#username").type(username);
+<<<<<<< HEAD
   cy.get("#submit").click();
 })
 
@@ -23,6 +27,8 @@ Cypress.Commands.add('login', (email, password) => {
   cy.visit("/login");
   cy.get("#email").type(email);
   cy.get("#password").type(password);
+=======
+>>>>>>> 1524a06 (first commit for this branch)
   cy.get("#submit").click();
 })
 //

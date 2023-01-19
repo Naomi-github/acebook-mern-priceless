@@ -12,9 +12,14 @@ UserSchema.statics.signup = async function(email, password, username) {
   const usernameExists = await this.findOne({username})
 
   if (exists) {
+<<<<<<< HEAD
     
     throw Error('Email already in use')
   }
+=======
+    throw Error('Email already in use')
+  } 
+>>>>>>> 1524a06 (first commit for this branch)
   else if (usernameExists) {
     throw Error('Username already in use')
   }

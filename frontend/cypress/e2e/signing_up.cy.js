@@ -3,7 +3,11 @@ describe("Signing up", () => {
     cy.visit("/signup");
     cy.get("#email").type("someone1@example.com");
     cy.get("#password").type("password");
+<<<<<<< HEAD
     cy.get("#username").type("username1");
+=======
+    cy.get("#username").type("username");
+>>>>>>> 1524a06 (first commit for this branch)
     cy.get("#submit").click();
 
     cy.url().should("include", "/login");
@@ -22,6 +26,18 @@ describe("Signing up", () => {
     cy.visit("/signup");
     cy.get("#password").type("password");
     cy.get("#username").type("username");
+<<<<<<< HEAD
+=======
+    cy.get("#submit").click();
+
+    cy.url().should("include", "/signup");
+  });
+
+  it("with missing username, redirects to '/signup'", () => {
+    cy.visit("/signup");
+    cy.get("#email").type("email@test.com");
+    cy.get("#password").type("password");
+>>>>>>> 1524a06 (first commit for this branch)
     cy.get("#submit").click();
 
     cy.url().should("include", "/signup");

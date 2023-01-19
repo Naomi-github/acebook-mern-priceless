@@ -2,7 +2,11 @@ import './App.css';
 import LoginForm from '../auth/LoginForm'
 import SignUpForm from '../user/SignUpForm'
 import ProfilePage from '../../pages/userProfile'
+<<<<<<< HEAD
 import React from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> 1524a06 (first commit for this branch)
 import Feed from '../feed/Feed'
 import {
   useNavigate,

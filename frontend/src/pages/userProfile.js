@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Post from "../components/post/Post";
@@ -86,6 +87,17 @@ const UserProfile = ({ navigate }) => {
     
     
     
+=======
+import React, { useState } from 'react';
+
+const UserProfile = ({ navigate }) => {
+
+  return (
+    <>
+    <h2>{} Profile! </h2> 
+      <h3> Your posts </h3>
+ 
+>>>>>>> 1524a06 (first commit for this branch)
     </>
   );
 
