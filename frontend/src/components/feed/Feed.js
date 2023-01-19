@@ -13,8 +13,10 @@ const Feed = ({ navigate }) => {
   const [token, setToken] = useState(window.localStorage.getItem("token"));
   const user_id = window.localStorage.getItem('user_id')
 
+  console.log(token)
   useEffect(() => {
     if (token) {
+      console.log(token)
       fetch("/posts", {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -25,6 +27,8 @@ const Feed = ({ navigate }) => {
           window.localStorage.setItem("token", data.token);
           setToken(window.localStorage.getItem("token"));
           setPosts(data.posts);
+          console.log(data.posts)
+          console.log(data.token)
         });
     }
   }, []);

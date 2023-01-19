@@ -3,12 +3,16 @@ const TokenGenerator = require("../models/token_generator");
 
 const PostsController = {
   Index: (req, res) => {
-    Post.find(async (err, posts, user_id) => {
+    Post.find(async (err, posts) => {
       if (err) {
         throw err;
       }
       const token = await TokenGenerator.jsonwebtoken(req.user_id);
-      res.status(200).json({ user_id: user_id, posts: posts, token: token });
+      console.log('user id')
+      console.log(req.user_id)
+      console.log(token)
+      res.status(200).json({ user_id: req.user_id, posts: posts, token: token });
+
     });
   },
   Find: (req, res) => {
@@ -36,10 +40,10 @@ const PostsController = {
   Update: async (req, res) => {
     try {
       if (!req.body.liked) {
-        await Post.updateOne({_id: req.params.id}, 
+        await Post.updateOne({_id: req.params.id},
           { $addToSet: { likes: req.body.user_id } })
       } else {
-        await Post.updateOne({_id: req.params.id}, 
+        await Post.updateOne({_id: req.params.id},
           { $pull: { likes: req.body.user_id } })
       }
       const token = await TokenGenerator.jsonwebtoken(req.body.user_id);

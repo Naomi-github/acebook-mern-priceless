@@ -36,7 +36,7 @@ const Post = ({ post, token, setToken, post_id, setPosts }) => {
 
   useEffect(() => {
     if(token) {
-      fetch("/users", {
+      fetch('/users', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'User_ID': `${post.user_id}`
