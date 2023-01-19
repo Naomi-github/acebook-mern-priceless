@@ -41,19 +41,19 @@ const Feed = ({ navigate }) => {
   if (token) {
     return (
       <>
-        <nav id="nav"> 
-        <h1>AceBook</h1>      
+        <nav id="nav">
+        <h1>AceBook</h1>
         <h2>Posts</h2>
         <div>
         <button onClick={profilePage}>Profile</button>
         <button onClick={logout}>Logout</button>
         </div>
-        </nav> 
+        </nav>
         <PostForm setPosts={setPosts} token={token} setToken={setToken} />
         <div data-cy="feed" id="feed" role="feed">
           {posts.map((post) => <Post post={post} token={token} setToken={setToken} key={post._id} post_id={post._id} setPosts={setPosts}/>).reverse()}
         </div>
-        
+
       </>
     );
   } else {

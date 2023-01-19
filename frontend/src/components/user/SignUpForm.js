@@ -10,12 +10,9 @@ const SignUpForm = ({ navigate }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-<<<<<<< HEAD
   const [UserExsistsErrorMessage, setUserExsistsErrorMessage] = useState('');
   const [EmptyFieldErrorMessage, setEmptyFieldErrorMessage] = useState('')
   const [GeneralErrorMessage, setGeneralErrorMessage] = useState('')
-=======
->>>>>>> 1524a06 (first commit for this branch)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -41,14 +38,10 @@ const SignUpForm = ({ navigate }) => {
           setUserExsistsErrorMessage('That user already exists - Please create a new account or login');
           console.log(response.json().error)
         } else {
-<<<<<<< HEAD
           console.log(response)
           navigate('/signup');
           setGeneralErrorMessage("Oops that didn't work. Please try again")
-=======
-          navigate('/signup');
           console.log(response.json().error)
->>>>>>> 1524a06 (first commit for this branch)
         }
       })
   }
@@ -64,7 +57,6 @@ const SignUpForm = ({ navigate }) => {
   const handleUsernameChange = (event) => {
     setUsername(event.target.value)
   }
-<<<<<<< HEAD
 
   const handleError = () => {
     setGeneralErrorMessage('')
@@ -97,17 +89,8 @@ const SignUpForm = ({ navigate }) => {
         </form>
       </div>
       </>
-=======
+    )
 
-    return (
-      <form onSubmit={handleSubmit}>
-          <input placeholder="Email" id="email" type='text' value={ email } onChange={handleEmailChange} />
-          <input placeholder="Password" id="password" type='password' value={ password } onChange={handlePasswordChange} />
-          <input placeholder="Username" id="username" type='text' value={ username } onChange={handleUsernameChange} />
-        <input id='submit' type="submit" value="Submit" />
-      </form>
->>>>>>> 1524a06 (first commit for this branch)
-    );
 }
 
 export default SignUpForm;

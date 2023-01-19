@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Post from "../components/post/Post";
@@ -60,21 +59,21 @@ const UserProfile = ({ navigate }) => {
   const feed = () => {
     navigate('/posts')
   }
-  
+
   return (
     <>
-    <nav id="nav"> 
-      <h1>Acebook</h1>      
+    <nav id="nav">
+      <h1>Acebook</h1>
       <h2 data-cy="user">{user.username}&apos;s profile!</h2>
       <div>
         <button onClick={feed}>Feed</button>
         <button onClick={logout}>Logout</button>
       </div>
-    </nav> 
-    <div className="img" > 
-      <img src={dp1} alt="dp1" /> 
+    </nav>
+    <div className="img" >
+      <img src={dp1} alt="dp1" />
     </div>
-    
+
     <div className="center">
       <h3> your posts </h3>
     </div>
@@ -82,22 +81,11 @@ const UserProfile = ({ navigate }) => {
           {posts.map((post) => <Post post={post} token={token} setToken={setToken} key={post._id} post_id={post._id} setPosts={setPosts}/>).reverse()}
     </div>
 
-   
-    
-    
-    
-    
-=======
-import React, { useState } from 'react';
 
-const UserProfile = ({ navigate }) => {
 
-  return (
-    <>
-    <h2>{} Profile! </h2> 
-      <h3> Your posts </h3>
- 
->>>>>>> 1524a06 (first commit for this branch)
+
+
+
     </>
   );
 

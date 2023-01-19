@@ -22,12 +22,12 @@ const Post = ({ post, token, setToken, post_id, setPosts }) => {
   const [user, setUser] = useState({});
   const [likes, setLikes] = useState(post.likes.length);
   const user_id = window.localStorage.getItem('user_id')
-  
-  
+
+
   const showComments = () => {
-    setCommentsView(!commentsView)    
+    setCommentsView(!commentsView)
   }
-  
+
   const deleteButtonView = (post.user_id === user_id)
 
   const dateTimeAgo = moment(new Date(post.createdAt)).fromNow();
@@ -67,7 +67,7 @@ const Post = ({ post, token, setToken, post_id, setPosts }) => {
     })
 
     let data = await response.json()
-  
+
     if (response.status !== 200) {
       console.log("likes not updated")
 
@@ -154,7 +154,7 @@ const Post = ({ post, token, setToken, post_id, setPosts }) => {
       ]
     })
   }
-  
+
   return (
     <article data-cy="post" key={post._id} className="post">
       <div className="messageContainer">
